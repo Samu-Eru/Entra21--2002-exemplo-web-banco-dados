@@ -1,7 +1,13 @@
+using Entra21.CSharp.ClinicaVeterinaria.Repositorio.BancoDados;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+builder.Services.AddDbContext<ClinicaVeterinariaContexto>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
 
 var app = builder.Build();
 
@@ -27,7 +33,7 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id}");
+        pattern: "{controller=Home}/{action=Index}/{id?}");
 });
 
 app.Run();
