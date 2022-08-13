@@ -15,17 +15,20 @@
         </tr>
     </thead>
     <thead>
-    <tbody>
-        <!--Lugar dos registros da tabela-->
-        <tr>
+    <tbody>       <!--Lugar dos registros da tabela-->
+        @foreach(var raca in ViewBag.Racas)
+            {
+                <tr>
+                    <!--Linha-->
+                    <td>@raca.Id</td> <!--Coluna específica para Body-->
+                    <td>@raca.Nome</td>
+                    <td>@raca.Especie</td>
+                </tr>
+            }
+            <tr>
             <td>1</td> <!--Coluna específica para body-->
             <td>Pinscher</td>
             <td>Cachorro</td>
-        </tr>
-        <tr>
-            <td>2</td> <!--Coluna específica para body-->
-            <td>Frajola</td>
-            <td>Gato</td>
         </tr>
     </tbody>
     </thead>
