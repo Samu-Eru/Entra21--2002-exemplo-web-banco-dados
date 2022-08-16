@@ -14,7 +14,7 @@ namespace Entra21.CSharp.ClinicaVeterinaria.Aplicacao.Controllers
         //com o mínimo necessário para o funcionamento correto
         public RacaController(ClinicaVeterinariaContexto contexto )
         {
-            _racaServico = new RacaServico( contexto);
+            _racaServico = new RacaServico(contexto);
         }
 
 
