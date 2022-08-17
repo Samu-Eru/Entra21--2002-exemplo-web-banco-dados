@@ -17,6 +17,7 @@
             <th>Código</th> <!--Coluna especifica do cabeçalho-->
             <th>Nome</th>
             <th>Espécie</th>
+            <th>Ação</th>
         </tr>
     </thead>
     <thead>
@@ -27,10 +28,16 @@
             <tr>
                 <!--Linha-->
                 <td>@raca.Id</td> <!--Coluna específica para Body-->
-
-
                 <td>@raca.Nome</td>
                 <td>@raca.Especie</td>
+
+                <!--Cria uma nova coluna "apagar" que contém o link do método apagar dentro de RacaServico
+                    pegando o ID do registro (raca.Id)
+                -->
+                <td>
+                    <a href="/raca/editar?id=@raca.Id">Editar  </a>
+                    <a href="/raca/apagar?id=@raca.Id">Apagar</a>
+                </td>
             </tr>
             }
         @*<tr>
