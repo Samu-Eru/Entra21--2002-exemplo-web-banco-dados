@@ -15,5 +15,6 @@ namespace Entra21.CSharp.ClinicaVeterinaria.Servico
         void Editar(RacaEditarViewModel racaEditarViewModel);
         void Apagar (int id);
         Raca ObterPorId(int id);
+
     }
 }
