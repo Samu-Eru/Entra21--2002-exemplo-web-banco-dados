@@ -1,4 +1,4 @@
-﻿@using Entra21.CSharp.ClinicaVeterinaria.Repositorio.Entidades
+﻿@*@using Entra21.CSharp.ClinicaVeterinaria.Repositorio.Entidades
 @*<h1>Editar Raça</h1>
 
 <form method="post" action "/raca/editar">
@@ -9,7 +9,7 @@
         <option value="Cachorro">Cachorro</option>
         <option value="Gato">Gato</option>
     </select>
-</form>*@
+</form>
 
 @{
     Layout = "~/Pages/Shared/_Layout.cshtml";
@@ -38,7 +38,7 @@
                     @(especie == raca.Especie ? "selected" : "")>@especie</option>
             }          
             @*<option value="Cachorro">Cachorro</option>
-            <option value="Gato">Gato</option>*@
+            <option value="Gato">Gato</option>
         </select>
     </div>
 
@@ -47,4 +47,4 @@
         <button type="submit" class="btn btn-success">Salvar</button>
     </div>
 
-</form>
+</form>*@
