@@ -1,4 +1,6 @@
-﻿using Entra21.CSharp.ClinicaVeterinaria.Repositorio.BancoDados;
+﻿//git config --global core.editor "code --wait"
+
+using Entra21.CSharp.ClinicaVeterinaria.Repositorio.BancoDados;
 using Entra21.CSharp.ClinicaVeterinaria.Repositorio.Enums;
 using Entra21.CSharp.ClinicaVeterinaria.Servico;
 using Entra21.CSharp.ClinicaVeterinaria.Servico.ViewModels;
@@ -47,8 +49,11 @@ namespace Entra21.CSharp.ClinicaVeterinaria.Aplicacao.Controllers
         {
             var especies = ObterEspecies();
 
+            
             ViewBag.Especies = especies;
-            return View();
+            var racaCadastrarViewModel = new RacaCadastrarViewModel();
+
+            return View(racaCadastrarViewModel);
         }
 
         // [Route("/raca/cadastrar")]
@@ -56,6 +61,13 @@ namespace Entra21.CSharp.ClinicaVeterinaria.Aplicacao.Controllers
         public IActionResult Cadastrar(
             [FromForm] RacaCadastrarViewModel racaCadastrarViewModel)
         {
+            //Valida o parametro recebido na Action se é inválido
+            //if (ModelState.IsValid == false)
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Especies = ObterEspecies();
+                return View(racaCadastrarViewModel);
+            }
             _racaServico.Cadastrar(racaCadastrarViewModel);
             return RedirectToAction("Index");
         }
