@@ -1,6 +1,6 @@
-﻿ @model List<Raca>
+﻿@model List<Raca>
 
-     <h2>Lista de Raças</h2>
+<h2>Lista de Raças</h2>
 
 <div class="row mb-2">
     <div class="text-end">
@@ -35,16 +35,15 @@
                     pegando o ID do registro (raca.Id)
                 -->
                 <td>
-                    <a asp-action="editar" asp-route-id="raca.Id">Editar</a>
-                    <a asp-action="apagar" asp-route-id="raca.Id">Apagar</a>
+                    <a asp-action="editar" asp-route-id="@raca.Id">Editar</a>
+                    <a asp-action="apagar" asp-route-id="@raca.Id">Apagar</a>
                 </td>
             </tr>
             }
-        @*<tr>
-            <td>1</td> <!--Coluna específica para body-->
-            <td>Pinscher</td>
-            <td>Cachorro</td>
+            @*<tr>
+        <td>1</td> <!--Coluna específica para body-->
+        <td>Pinscher</td>
+        <td>Cachorro</td>
         </tr>*@
     </tbody>
-    </thead>
 </table>
