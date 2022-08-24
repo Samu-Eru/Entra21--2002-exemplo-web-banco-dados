@@ -1,12 +1,6 @@
 ﻿using Entra21.CSharp.ClinicaVeterinaria.Repositorio;
-using Entra21.CSharp.ClinicaVeterinaria.Repositorio.BancoDados;
 using Entra21.CSharp.ClinicaVeterinaria.Repositorio.Entidades;
-using Entra21.CSharp.ClinicaVeterinaria.Servico.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Entra21.CSharp.ClinicaVeterinaria.Servico.ViewModels.Racas;
 
 namespace Entra21.CSharp.ClinicaVeterinaria.Servico
 {
@@ -18,9 +12,9 @@ namespace Entra21.CSharp.ClinicaVeterinaria.Servico
 
 
         // Contrutor: construir o objeto de RacaServico com o mínimo para a correta execução
-        public RacaServico(ClinicaVeterinariaContexto contexto)
+        public RacaServico(IRacaRepositorio racaRepositorio)
         {
-            _racaRepositorio = new RacaRepositorio(contexto);
+            _racaRepositorio = racaRepositorio;
         }
 
         public void Editar(RacaEditarViewModel racaEditarViewModel)
